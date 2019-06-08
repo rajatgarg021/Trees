@@ -1,0 +1,114 @@
+/**
+ * Definition for binary tree
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+ 
+ 
+vector<int> Solution::inorderTraversal(TreeNode* a) {
+
+    vector<int> v;
+    stack<TreeNode *> s;
+    TreeNode * current;
+    current = a->left;
+    s.push(a);
+    while(!s.empty() || current)
+    {
+        while(current)
+        {
+            s.push(current);
+            //cout<<current->val<<endl;
+            current = current->left;
+        }
+        current = s.top();
+        //cout<<current->val<<endl;
+        s.pop();
+        v.push_back(current->val);
+        current = current->right;
+    }
+    return v;
+}
+
+ 
+//  vector<int> inorder(TreeNode *a, vector<int> &v){
+//      if(a == NULL)
+//      {
+//          return v;
+//      }
+//      inorder(a->left, v);
+//      v.push_back(a->val);
+//      inorder(a->right, v);
+//      return v;
+     
+//  }
+
+
+// vector<int> Solution::inorderTraversal(TreeNode* a) {
+
+//     vector<int> v;
+//     return inorder(a,v);
+// }
+
+
+
+/**
+ * Definition for binary tree
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+ 
+ 
+vector<int> Solution::inorderTraversal(TreeNode* a) {
+
+    vector<int> v;
+    stack<TreeNode *> s;
+    TreeNode * current;
+    current = a->left;
+    s.push(a);
+    while(!s.empty() || current)
+    {
+        while(current)
+        {
+            s.push(current);
+            //cout<<current->val<<endl;
+            current = current->left;
+        }
+        current = s.top();
+        //cout<<current->val<<endl;
+        s.pop();
+        v.push_back(current->val);
+        current = current->right;
+    }
+    return v;
+}
+
+ 
+//  vector<int> inorder(TreeNode *a, vector<int> &v){
+//      if(a == NULL)
+//      {
+//          return v;
+//      }
+//      inorder(a->left, v);
+//      v.push_back(a->val);
+//      inorder(a->right, v);
+//      return v;
+     
+//  }
+
+
+// vector<int> Solution::inorderTraversal(TreeNode* a) {
+
+//     vector<int> v;
+//     return inorder(a,v);
+// }
+
+
+
